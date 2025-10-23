@@ -152,14 +152,21 @@ def plot_network(G, centrality_metric="degree", dark_mode=True):
         hoverinfo='text'
     ))
 
-    fig.update_layout(
+        fig.update_layout(
         title=f"Python Module Dependency Network ({centrality_metric.capitalize()} centrality)",
         showlegend=False,
         paper_bgcolor='black' if dark_mode else 'white',
         plot_bgcolor='black' if dark_mode else 'white',
-        font=dict(color='white' if dark_mode else 'black')
+        font=dict(color='white' if dark_mode else 'black'),
+        margin=dict(l=0, r=0, t=40, b=0)
     )
+
+    # Hide axes for a cleaner look
+    fig.update_xaxes(showgrid=False, zeroline=False, visible=False)
+    fig.update_yaxes(showgrid=False, zeroline=False, visible=False)
+
     return fig
+
 
 # --------------------------------------------
 # STREAMLIT APP
