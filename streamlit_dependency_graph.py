@@ -152,13 +152,13 @@ def plot_network(G, centrality_metric="degree", dark_mode=True):
         hoverinfo='text'
     ))
 
-        fig.update_layout(
-        title=f"Python Module Dependency Network ({centrality_metric.capitalize()} centrality)",
-        showlegend=False,
-        paper_bgcolor='black' if dark_mode else 'white',
-        plot_bgcolor='black' if dark_mode else 'white',
-        font=dict(color='white' if dark_mode else 'black'),
-        margin=dict(l=0, r=0, t=40, b=0)
+    fig.update_layout(
+    title=f"Python Module Dependency Network ({centrality_metric.capitalize()} centrality)",
+    showlegend=False,
+    paper_bgcolor='black' if dark_mode else 'white',
+    plot_bgcolor='black' if dark_mode else 'white',
+    font=dict(color='white' if dark_mode else 'black'),
+    margin=dict(l=0, r=0, t=40, b=0)
     )
 
     # Hide axes for a cleaner look
@@ -172,7 +172,7 @@ def plot_network(G, centrality_metric="degree", dark_mode=True):
 # STREAMLIT APP
 # --------------------------------------------
 st.set_page_config(page_title="Python Dependency Visualizer", layout="wide")
-st.title("🔗 Python Dependency Visualizer (Advanced)")
+st.title("Python Dependency Visualizer")
 
 st.write("Analyze inter-file import dependencies in your Python project, with centrality-based sizing and dark mode!")
 
